@@ -8,7 +8,7 @@ def get_ip():
         try:
                 ip = request.headers['x-real-ip']
         except KeyError:
-                ip = None
+                ip = 'real'
         if ip == '10.18.3.20':
                 ip = request.headers['x-atomshare-real-ip']
         return ip
@@ -42,4 +42,4 @@ def page_sendGraph():
         return 'Error: %s' % ret
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=3000)
+    app.run(host='127.0.0.1', port=3000)

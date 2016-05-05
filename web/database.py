@@ -40,6 +40,11 @@ class NodeDB:
                                 now))
 
     def insert_graph(self, nodes, edges, uploaded_by):
+        self.cur.execute('''
+                         INSERT INTO history (nodes, edges)
+                         VALUES (%s, %s)''', (
+                         len(nodes), len(edges)))
+
         for n in nodes.itervalues():
             self.insert_node(n)
 
