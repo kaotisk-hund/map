@@ -30,3 +30,17 @@ CREATE TABLE `nodes` (
   `last_seen` int(11) NOT NULL,
   PRIMARY KEY (`ip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+  --
+  -- Table structure for table `history`
+  --
+
+  CREATE TABLE `history` (
+    `id` int(11) NOT NULL,
+    `nodes` int(11) NOT NULL,
+    `edges` int(11) NOT NULL,
+    `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+  -- --------------------------------------------------------
