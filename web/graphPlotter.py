@@ -97,4 +97,5 @@ def _gradient_color(ratio, colors):
     g = a[1] + (b[1] - a[1]) * ratio
     b = a[2] + (b[2] - a[2]) * ratio
 
-    return '#%02x%02x%02x' % (r, g, b)
+    # return '#%02x%02x%02x' % (r, g, b)
+    return '#%02x%02x%02x' % (int(r), int(g), int(b))
